@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import Column, DateTime, func
+from sqlalchemy import Column, DateTime, func, String
 from sqlalchemy.dialects.postgresql import UUID
 
 from core.session import Base
@@ -13,5 +13,5 @@ def generate_uuid():
 class User(Base):
     __tablename__ = 'users'
     user_id = Column(UUID(as_uuid=True), primary_key=True, index=True, default=generate_uuid)
-    name = Column(str, nullable=False)
+    name = Column(String(36), nullable=False)
     created_at = Column(DateTime, default=func.utc_timestamp())

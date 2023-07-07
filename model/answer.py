@@ -13,5 +13,5 @@ def generate_uuid():
 class Answer(Base):
     __tablename__ = "answers"
     answer_id = Column(UUID(as_uuid=True), primary_key=True, index=True, default=generate_uuid)
-    user_id = Column(UUID(as_uuid=True), foreign_key=True)
+    user_id = Column(UUID(as_uuid=True), nullable=False)
     created_at = Column(DateTime, default=func.utc_timestamp())

@@ -4,7 +4,7 @@ from sqlalchemy import Column, DateTime, func, String
 from sqlalchemy.dialects.postgresql import UUID
 
 from core.session import Base
-from util import base64_util
+from util import base62_util
 
 
 def generate_uuid():
@@ -12,8 +12,7 @@ def generate_uuid():
 
 
 def create_hash_name(name: str):
-    _hash = base64_util.encode(name)
-    return name + '#' + _hash[:4]
+    return name + '#' + base62_util.encode()
 
 
 class User(Base):

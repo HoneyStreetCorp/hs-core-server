@@ -1,7 +1,7 @@
 import random
 import string
 
-token_lengh = 4
+TOKEN_LENGTH = 4
 
 
 def encode():
@@ -11,6 +11,6 @@ def encode():
 def __generate_bas62():
     chars = string.ascii_letters + string.digits
     base62 = ''
-    for _ in range(token_lengh):
+    for _ in range(TOKEN_LENGTH):
         base62 += random.choice(chars)
     return base62

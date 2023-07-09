@@ -1,3 +1,4 @@
 class UserResponse:
-    def __init__(self, user_id: str):
-        self.user_id = user_id
+    def __init__(self, id: str, name: str):
+        self.id = id
+        self.name = name
